@@ -61,7 +61,7 @@ class Employee:
 
 
 
-        return f"'Renee works on a monthly salary of {self.salary} and receives a commission for {self.contract} contract(s) at {self.commission}/contract.  Their total pay is {self.get_pay()}.'"
+
 
 
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.
