@@ -19,7 +19,7 @@ class Employee:
         return self.commission * self.contract
 
       elif  self.com_type == "fixed":
-        return self.self.commission
+        return self.commission
 
     def get_pay(self):
       if self.hours == 0:
