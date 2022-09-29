@@ -21,7 +21,7 @@ class Employee:
       elif  self.com_type == "fixed":
         return self.commission
 
-    def get_price(self):
+    def get_pay(self):
       if self.hours == 0:
         return self.salary + self.add_commission
       else:
@@ -33,28 +33,28 @@ class Employee:
       if self.hours == 0:
 
         if self.com_type == None:
-          return f"{self.name} works on a monthly salary of {self.salary}.  Their total pay is {self.total}"
+          return f"{self.name} works on a monthly salary of {self.salary}.  Their total pay is {self.get_pay}"
 
         elif self.com_type == "contract":
-          return f"{self.name} works on a monthly salary of {self.salary} and receives a bonus commission of {self.commission}.  Their total pay is {self.get_price()}."
+          return f"{self.name} works on a monthly salary of {self.salary} and receives a bonus commission of {self.commission}.  Their total pay is {self.get_pay()}."
 
         elif self.com_type == "fixed":
-          return f"{self.name} works on a monthly salary of {self.salary} and receives a bonus commission of {self.commission}.  Their total pay is {self.get_price()}."
+          return f"{self.name} works on a monthly salary of {self.salary} and receives a bonus commission of {self.commission}.  Their total pay is {self.get_pay()}."
 
 
       else:
 
         if self.com_type == None:
-          return f"{self.name} works on a contract of {self.hours} hours at {self.salary}/hour.  Their total pay is {self.get_price()}."
+          return f"{self.name} works on a contract of {self.hours} hours at {self.salary}/hour.  Their total pay is {self.get_pay()}."
 
 
         elif self.com_type == "contract":
 
-          return f"{self.name} works on a contract of {self.hours} hours at {self.salary}/hour and receives a commission for {self.contract} contract(s) at {self.commission}/contract.  Their total pay is {self.get_price()}."
+          return f"{self.name} works on a contract of {self.hours} hours at {self.salary}/hour and receives a commission for {self.contract} contract(s) at {self.commission}/contract.  Their total pay is {self.get_pay()}."
 
         elif self.com_type == "fixed":
 
-          return f"{self.name} works on a contract of {self.hours} hours at {self.salary}/hour and receives a bonus commission of {self.commission}.  Their total pay is {self.get_price()}."
+          return f"{self.name} works on a contract of {self.hours} hours at {self.salary}/hour and receives a bonus commission of {self.commission}.  Their total pay is {self.get_pay()}."
 
 
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.
