@@ -21,7 +21,8 @@ class Employee:
       elif  self.com_type == "fixed":
         return self.commission
 
-    def get_pay(self):
+    @property
+    def total(self):
       if self.hours == 0:
         return self.salary + self.add_commission
       else:
@@ -29,7 +30,38 @@ class Employee:
 
 
     def __str__(self):
-        return f"{self.name} works on a monthly salary of {self.salary} and receives a commission for {self.contract} contract(s) at {self.commission}.  Their total pay is {self.get_pay()}."
+
+      if self.hours == 0:
+
+        if self.com_type == None:
+          return f"{self.name} works on a monthly salary of {self.salary}.  Their total pay is {self.total}"
+
+        elif self.com_type == "contract":
+          return f"{self.name} works on a monthly salary of {self.salary} and receives a bonus commission of {self.commission}.  Their total pay is {self.total}."
+
+        elif self.com_type == "fixed":
+          return f"{self.name} works on a monthly salary of {self.salary} and receives a bonus commission of {self.commission}.  Their total pay is {self.total}."
+
+
+      else:
+
+        if self.com_type == None:
+          return f"{self.name} works on a contract of {self.hours} hours at {self.salary}/hour.  Their total pay is {self.total}."
+
+
+        elif self.com_type == "contract":
+
+          return f"{self.name} works on a contract of {self.hours} hours at {self.salary}/hour and receives a commission for {self.contract} contract(s) at {self.commission}/contract.  Their total pay is {self.total}."
+
+        elif self.com_type == "fixed":
+
+          return f"{self.name} works on a contract of {self.hours} hours at {self.salary}/hour and receives a bonus commission of {self.commission}.  Their total pay is {self.total}."
+
+
+
+
+
+        return f"'Renee works on a monthly salary of {self.salary} and receives a commission for {self.contract} contract(s) at {self.commission}/contract.  Their total pay is {self.get_pay()}.'"
 
 
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.
@@ -41,6 +73,7 @@ charlie = Employee('Charlie', salary = 25, hours = 100)
 renee = Employee('Renee', salary = 3000, commission = 200, contract = 4, com_type = "contract")
 # Jan works on a contract of 150 hours at 25/hour and receives a commission for 3 contract(s) at 220/contract.  Their total pay is 4410.
 jan = Employee('Jan', salary = 25, hours = 150, commission = 220, contract = 3, com_type = "contract")
+
 # Robbie works on a monthly salary of 2000 and receives a bonus commission of 1500.  Their total pay is 3500.
 robbie = Employee('Robbie', salary = 2000, commission = 1500, com_type = "fixed")
 # Ariel works on a contract of 120 hours at 30/hour and receives a bonus commission of 600.  Their total pay is 4200.
