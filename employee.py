@@ -22,7 +22,7 @@ class Employee:
         return self.commission
 
     @property
-    def total(self):
+    def get_pay(self):
       if self.hours == 0:
         return self.salary + self.add_commission
       else:
