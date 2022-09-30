@@ -34,7 +34,7 @@ class Employee:
       if self.hours == 0:
 
         if self.com_type == None:
-          return f"{self.name} works on a monthly salary of {self.salary}.  Their total pay is {self.get_pay}"
+          return f"{self.name} works on a monthly salary of {self.salary}.  Their total pay is {self.get_pay()}"
 
         elif self.com_type == "contract":
           return f"{self.name} works on a monthly salary of {self.salary} and receives a commission for {self.contract} contract(s) at {self.commission}/contract.  Their total pay is {self.get_pay()}."
