@@ -22,6 +22,7 @@ class Employee:
         return self.commission
 
     def get_pay(self):
+
       if self.hours == 0:
         return self.salary + self.add_commission
       else:
@@ -36,7 +37,7 @@ class Employee:
           return f"{self.name} works on a monthly salary of {self.salary}.  Their total pay is {self.get_pay}"
 
         elif self.com_type == "contract":
-          return f"{self.name} works on a monthly salary of {self.salary} and receives a bonus commission of {self.commission}.  Their total pay is {self.get_pay()}."
+          return f"{self.name} works on a monthly salary of {self.salary} and receives a commission for {self.contract} contract(s) at {self.commission}/contract.  Their total pay is {self.get_pay()}."
 
         elif self.com_type == "fixed":
           return f"{self.name} works on a monthly salary of {self.salary} and receives a bonus commission of {self.commission}.  Their total pay is {self.get_pay()}."
@@ -45,7 +46,7 @@ class Employee:
       else:
 
         if self.com_type == None:
-          return f"{self.name} works on a contract of {self.hours} hours at {self.salary}/hour.  Their total pay is {self.get_pay()}."
+          return f"{self.name} works on a monthly salary of {self.salary}.  Their total pay is {self.get_pay()}."
 
 
         elif self.com_type == "contract":
